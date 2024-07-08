@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emotion Based Music Recommendation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Emotion Based Music Recommendation</h1>
+    <div class="container1">
+        <div class="camera-frame">
+            <img src="{{ url_for('video_feed') }}" width="1000" height="600">
+        </div>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+    </div>
+    <form method="POST" action="{{ url_for('capture') }}">
+        <button type="submit" class="btn">Capture Emotion</button>
+    </form>
+</body>
+</html>
